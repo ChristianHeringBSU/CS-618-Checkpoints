@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
+
 import { PostList } from '../components/PostList.jsx'
 import { CreatePost } from '../components/CreatePost.jsx'
 import { PostFilter } from '../components/PostFilter.jsx'
@@ -6,8 +9,6 @@ import { useQuery } from '@tanstack/react-query'
 import { getPosts } from '../api/posts.js'
 
 import { Header } from '../components/Header.jsx'
-
-import { useState } from 'react'
 
 export function Blog() {
   const [author, setAuthor] = useState('')
@@ -23,6 +24,13 @@ export function Blog() {
 
   return (
     <div style={{ padding: 8 }}>
+      <Helmet>
+        <title>Full-Stack React Blog</title>
+        <meta
+          name='description'
+          content='A blog full of articles about full-stack React development.'
+        />
+      </Helmet>
       <Header />
       <br />
       <hr />
